@@ -7,6 +7,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 
 # Jupyter environment
 RUN pip3 install --disable-pip-version-check --no-cache-dir ipykernel jupyter
+RUN pip3 install --disable-pip-version-check --no-cache-dir Qiskit Matplotlib Pillow Pycryptodomex Cryptography
 
 USER vscode
 
