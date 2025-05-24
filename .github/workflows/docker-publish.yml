@@ -47,6 +47,14 @@ jobs:
             type=ref,event=tag       
             type=raw,value=latest
 
+       # początek testu
+      - name: Build Docker image (test)
+        run: docker build -t sjuprojekt .
+
+      - name: Run test script inside container
+        run: docker run --rm sjuprojekt python /home/vscode/workspace/test.py
+       # koniec testu
+
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v5
